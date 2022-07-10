@@ -1,31 +1,42 @@
-# the-combined-blog/nuxt-storyblok-poc
+# Nuxt 3 Minimal Starter
 
-This is a proof of concept for using Nuxt as a framework for building a site using the StoryBlok headless CMS.
+Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
-## Getting Started
+## Setup
 
-Download links:
+Make sure to install the dependencies:
 
-SSH clone URL: ssh://git@git.jetbrains.space/zimprogramming/the-combined-blog/nuxt-storyblok-poc.git
+```bash
+# yarn
+yarn install
 
-HTTPS clone URL: https://git.jetbrains.space/zimprogramming/the-combined-blog/nuxt-storyblok-poc.git
+# npm
+npm install
 
-
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-## Prerequisites
-
-What things you need to install the software and how to install them.
-
-```
-Examples
+# pnpm
+pnpm install --shamefully-hoist
 ```
 
-## Deployment
+## Development Server
 
-Add additional notes about how to deploy this on a production system.
+Start the development server on http://localhost:3000
 
-## Resources
+```bash
+npm run dev
+```
 
-Add links to external resources for this project, such as CI server, bug tracker, etc.
+## Production
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+Locally preview production build:
+
+```bash
+npm run preview
+```
+
+Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
