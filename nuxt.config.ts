@@ -1,5 +1,3 @@
-import Inspector from 'unplugin-vue-inspector/vite';
-
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 
 const isProd = process.env.NODE_ENV === 'production';
