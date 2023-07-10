@@ -1,5 +1,3 @@
-import path from 'path';
-import MkCert from 'vite-plugin-mkcert';
 import Inspector from 'unplugin-vue-inspector/vite';
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
@@ -11,7 +9,11 @@ export default defineNuxtConfig({
 
 	modules: [
 		'@storyblok/nuxt',
-		'@nuxtjs/tailwindcss'
+		'@nuxtjs/tailwindcss',
+		['unplugin-vue-inspector/nuxt', {
+			enabled: true,
+			toggleButtonVisibility: 'always'
+		}]
 		// 'nuxt-speedkit'
 	],
 
@@ -45,10 +47,5 @@ export default defineNuxtConfig({
 
 	tailwindcss: {
 		/* https://tailwindcss.nuxtjs.org/getting-started/options */
-	},
-
-	vite: {
-		server: { https: true },
-		plugins: [MkCert({ keyFileName: path.join(__dirname, 'localhost.pem'), certFileName: path.join(__dirname, 'localhost.cert.pem') }), Inspector()]
 	}
 });
