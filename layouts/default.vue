@@ -1,6 +1,10 @@
 <template>
-  <main>
-    <Layouts.Default.Header />
-    <slot />
-  </main>
+	<main>
+		<DefaultHeader />
+		<slot />
+	</main>
 </template>
+
+<script setup>
+import DefaultHeader from './default/StaticHeader.vue';
+</script>

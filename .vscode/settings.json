@@ -1,23 +1,45 @@
 {
 	"workbench.colorCustomizations": {
-		"activityBar.activeBackground": "#407fbf",
-		"activityBar.activeBorder": "#77284f",
-		"activityBar.background": "#407fbf",
-		"activityBar.foreground": "#e7e7e7",
-		"activityBar.inactiveForeground": "#e7e7e799",
-		"activityBarBadge.background": "#77284f",
+		"activityBar.activeBackground": "#FFB86D",
+		"activityBar.activeBorder": "#6D344A",
+		"activityBar.background": "#F69422",
+		"activityBar.foreground": "#492533",
+		"activityBar.inactiveForeground": "#492533",
+		"activityBarBadge.background": "#057b44",
 		"activityBarBadge.foreground": "#e7e7e7",
-		"sash.hoverBorder": "#407fbf",
-		"statusBar.background": "#336699",
-		"statusBar.foreground": "#e7e7e7",
-		"statusBarItem.hoverBackground": "#407fbf",
-		"statusBarItem.remoteBackground": "#336699",
-		"statusBarItem.remoteForeground": "#e7e7e7",
-		"tab.activeBorder": "#407fbf",
-		"titleBar.activeBackground": "#336699",
-		"titleBar.activeForeground": "#e7e7e7",
-		"titleBar.inactiveBackground": "#33669999",
-		"titleBar.inactiveForeground": "#e7e7e799"
+		"sash.hoverBorder": "#FFB86D",
+		"statusBar.background": "#f69422",
+		"statusBar.foreground": "#492533",
+		"statusBarItem.hoverBackground": "#FFB86D",
+		"statusBarItem.remoteBackground": "#f69422",
+		"statusBarItem.remoteForeground": "#492533",
+		"tab.activeBorder": "#f69422",
+		"titleBar.activeBackground": "#f69422",
+		"titleBar.activeForeground": "#492533",
+		"titleBar.inactiveBackground": "#AA671E",
+		"titleBar.inactiveForeground": "#492533",
+		"commandCenter.border": "#492533"
 	},
-	"peacock.color": "#369"
+	"editor.tabSize": 3,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+	"eslint.format.enable": true,
+	"[javascript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[vue]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"eslint.lintTask.enable": true,
+	"eslint.packageManager": "yarn"
 }

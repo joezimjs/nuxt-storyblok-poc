@@ -1,11 +1,15 @@
-<script setup>
-const { slug } = useRoute().params
+<script setup lang="ts">
+let { slug } = useRoute().params;
 
-const story = await useStoryblok(slug ? slug : 'home', {
-  version: 'draft',
-})
+if (Array.isArray(slug)) {
+	slug = slug[0];
+}
+
+const story = await useAsyncStoryblok(slug || 'home', {
+	version: 'draft'
+});
 </script>
 
 <template>
-  <StoryblokComponent v-if="story" :blok="story.content" />
+	<StoryblokComponent v-if="story" :blok="story.content" />
 </template>
