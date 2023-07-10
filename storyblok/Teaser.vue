@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-	<div v-editable="blok" class="prose prose-lg">
+	<div v-editable="blok" class="prose prose-xl">
 		<h2 class="py-8 mb-6 text-5xl font-bold text-center">
 			{{ blok.headline }}
 		</h2>

@@ -10,13 +10,13 @@ type RichTextNode = {
 	attrs: Record<string, any>
 } | RichTextBlokNode
 
-type RichTextData = Ref<{
+export type RichTextData = {
 	content: RichTextNode[]
-}>
+}
 
-export default function simplifyRichTextData (data: RichTextData) {
+export function simplifyRichTextData (data: RichTextData) {
 	try {
-		return data.value?.content?.map((node) => {
+		return data.content?.map((node) => {
 			if (node.type === 'blok') {
 				return (node as RichTextBlokNode).attrs?.body?.map(blok => ({
 					component: blok.component,

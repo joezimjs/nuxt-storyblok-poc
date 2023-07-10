@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import simplifyRichTextData from './simplifyRichTextData';
+import type { RichTextData } from '@/utils/simplifyRichTextData';
 const props = defineProps({
 	data: {
 		type: Object as PropType<Record<string, any>>,
@@ -13,5 +13,5 @@ const props = defineProps({
 	}
 });
 
-const nodes = computed(() => simplifyRichTextData(toRef(props, 'data')));
+const nodes = computed(() => simplifyRichTextData(props.data as RichTextData));
 </script>
