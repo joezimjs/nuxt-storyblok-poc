@@ -1,4 +1,5 @@
 <script setup>
+import RichText from '@/components/RichText';
 defineProps({
 	blok: {
 		type: Object,
