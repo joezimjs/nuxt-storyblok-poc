@@ -1,10 +1,7 @@
-<script setup>
-defineProps({
-	blok: {
-		type: Object,
-		required: true
-	}
-});
+<script setup lang="ts">
+import type { FeatureStoryblok } from './bloks'
+
+const blok = defineProp<FeatureStoryblok>(undefined, true)
 </script>
 
 <template>

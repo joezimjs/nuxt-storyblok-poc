@@ -12,23 +12,23 @@ module.exports = {
 	plugins: [],
 	rules: {
 		indent: ['warn', 'tab'],
-		semi: ['error', 'always'],
-		'comma-dangle': ['error', 'never'],
+		semi: ['warn', 'never'],
+		'comma-dangle': ['warn', 'never'],
 		'no-tabs': 'off',
 		'vue/html-indent': [
-			'error',
+			'warn',
 			'tab',
 			{
 				attribute: 1,
 				baseIndent: 1,
 				closeBracket: 0,
-				alignAttributesVertically: true,
+				alignAttributesVertically: false,
 				ignores: []
 			}
 		],
 		'vue/multi-word-component-names': 'off',
 		'brace-style': 'off',
 		'@typescript-eslint/brace-style': ['warn', 'stroustrup', { allowSingleLine: true }],
-		'space-in-parens': ['error', 'never']
+		'space-in-parens': ['warn', 'never']
 	}
-};
+}

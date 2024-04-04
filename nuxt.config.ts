@@ -1,29 +1,48 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 
-const isProd = process.env.NODE_ENV === 'production';
+const isProd = import.meta.env.PROD
 
 export default defineNuxtConfig({
-	extends: ['nuxt-seo-kit'],
-
 	modules: [
-		'@storyblok/nuxt',
-		'@nuxtjs/tailwindcss',
-		['unplugin-vue-inspector/nuxt', {
-			enabled: true,
-			toggleButtonVisibility: 'always'
-		}]
-		// 'nuxt-speedkit'
+		['@storyblok/nuxt', {
+			accessToken: import.meta.env.STORYBLOK_ACCESS_TOKEN,
+			apiOptions: {
+				region: 'us',
+				version: isProd ? 'published' : 'draft'
+			},
+			bridge: !isProd // optimizes by excluding the bridge on production
+		}],
+		['@nuxtjs/tailwindcss', {
+			/* https://tailwindcss.nuxtjs.org/getting-started/options */
+		}],
+		// 'nuxt-speedkit', // https://github.com/GrabarzUndPartner/nuxt-speedkit
+		// 'nuxt-security', // https://github.com/Baroshem/nuxt-security
+		// partytown, algolia, supabase?, Headless UI/shadcn, og-image?, icons, cloudflare-analytics (or any analytics), authjs (or supabase), drizzle, zod
+		// ['unplugin-vue-inspector/nuxt', {
+		// 	enabled: !isProd && false,
+		// 	toggleButtonVisibility: 'active'
+		// }],
+		'@nuxt/image',
+		'@vue-macros/nuxt',
+		'@vueuse/nuxt',
+		'@nuxtjs/seo'
 	],
+
+	macros: {
+		defineProp: { edition: 'johnsonEdition' }
+	},
+
+	image: {
+		storyblok: { baseURL: 'https://a-us.storyblok.com' }
+	},
 
 	experimental: {
 		componentIslands: true
 	},
 
 	components: [
-		{
-			path: '~/components/rich-text',
-			global: true
-		}
+		{ path: '~/components/bloks', global: true, pathPrefix: false },
+		{ path: '~/components', global: true, pathPrefix: false }
 	],
 
 	devServer: {
@@ -32,18 +51,8 @@ export default defineNuxtConfig({
 			cert: 'localhost.cert.pem'
 		}
 	},
-	devtools: true,
 
-	storyblok: {
-		accessToken: process.env.STORYBLOK_TOKEN,
-		apiOptions: {
-			region: 'us',
-			version: isProd ? 'published' : 'draft'
-		},
-		bridge: !isProd // optimizes by excluding the bridge on production
-	},
-
-	tailwindcss: {
-		/* https://tailwindcss.nuxtjs.org/getting-started/options */
+	devtools: {
+		enabled: false
 	}
-});
+})

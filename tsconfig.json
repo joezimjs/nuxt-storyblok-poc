@@ -1,4 +1,18 @@
 {
-  // https://v3.nuxtjs.org/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json"
+	// https://v3.nuxtjs.org/concepts/typescript
+	"extends": "./.nuxt/tsconfig.json",
+
+	// https://vue-macros.dev/macros/define-prop.html
+	"vueCompilerOptions": {
+		"plugins": [
+			"@vue-macros/volar/short-vmodel"
+		],
+		"vueMacros": {
+			"shortVmodel": {
+				"prefix": "::",
+			},
+		},
+		// "kevinEdition" | "johnsonEdition" | false
+		"experimentalDefinePropProposal": "johnsonEdition",
+	},
 }

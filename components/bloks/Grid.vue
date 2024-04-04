@@ -1,10 +1,7 @@
-<script setup>
-defineProps({
-	blok: {
-		type: Object,
-		required: true
-	}
-});
+<script setup lang="ts">
+import type { GridStoryblok } from './bloks'
+
+const blok = defineProp<GridStoryblok>(undefined, true)
 </script>
 
 <template>
